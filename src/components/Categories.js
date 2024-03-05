@@ -15,7 +15,7 @@ const Categories = () => {
                 <p class="card-text">
                 Fiction is imaginative storytelling that creates characters, settings, and plots, often reflecting on human experiences and emotions.
                 </p>
-                <a href="/fiction" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>
@@ -30,7 +30,7 @@ const Categories = () => {
                 <p class="card-text">
                 Factual writing that presents information or tells a true story, often based on research and real-life events.
                 </p>
-                <a href="/non-fiction" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>
@@ -46,7 +46,7 @@ const Categories = () => {
                 <p class="card-text">
                 Involves solving a crime or unraveling a puzzle, typically with a detective or amateur sleuth as the protagonist.
                 </p>
-                <a href="/mystery" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>
@@ -66,7 +66,7 @@ const Categories = () => {
                 <p class="card-text">
                 Provides advice, guidance, and strategies for personal growth, self-improvement, and achieving success and happiness.
                 </p>
-                <a href="/self-help" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>
@@ -81,7 +81,7 @@ const Categories = () => {
                 <p class="card-text">
                 An account of a person's life written by themselves, offering insights into their personal experiences and reflections.
                 </p>
-                <a href="/autobiographies" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>
@@ -97,7 +97,7 @@ const Categories = () => {
                 <p class="card-text">
                 Focuses on criminal activities, often from the perspective of law enforcement or criminals themselves.
                 </p>
-                <a href="/crime" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>
@@ -116,7 +116,7 @@ const Categories = () => {
                 <p class="card-text">
                 Intended to evoke fear, often involving supernatural or macabre elements, designed to thrill and unsettle readers.
                 </p>
-                <a href="/horror" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>
@@ -131,7 +131,7 @@ const Categories = () => {
                 <p class="card-text">
                 Features magical or supernatural elements, often set in imaginary worlds with mythical creatures and epic quests.
                 </p>
-                <a href="/fantasy" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>
@@ -147,7 +147,7 @@ const Categories = () => {
                 <p class="card-text">
                 Builds suspense and excitement, often involving danger, suspense, and high stakes, keeping readers on the edge of their seats.
                 </p>
-                <a href="/thriller" class="btn btn-primary">
+                <a href="/category-detail" class="btn btn-primary">
                   See Books
                 </a>
               </div>

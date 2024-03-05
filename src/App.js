@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import Categories from "./components/Categories";
 import Racks from "./components/Racks";
 import Books from "./components/Books";
+import Categorydetail from "./components/categorydetail";
 function App() {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/Racks" element={<Racks />} />
         <Route path="/books" element={<Books />} />
+        <Route path="/category-detail" element={<Categorydetail />} />
       </Routes>
     </BrowserRouter>
   );
