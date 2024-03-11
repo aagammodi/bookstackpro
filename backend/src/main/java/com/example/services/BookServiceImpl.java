@@ -20,4 +20,11 @@ public class BookServiceImpl implements BookService{
     public List<Book> findAll(){
         return bookRepository.findAll();
     }
+
+    @Override
+    public List<Book> getRackBooks(int rackId){
+        List<Book> list = bookRepository.findAll();
+        list = list.stream().filter(book -> (book.getRack().getRackId()==rackId)).toList();
+        return list;
+    }
 }

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface BookService {
     public List<Book> findAll();
+    List<Book> getRackBooks(int rackId);
 }

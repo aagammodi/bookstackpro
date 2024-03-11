@@ -18,7 +18,7 @@ const Categories = () => {
   };
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const handleSeeBooks = (genreId) => {
     navigate(`/categories/${genreId}`);
