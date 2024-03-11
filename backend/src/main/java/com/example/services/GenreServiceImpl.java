@@ -32,4 +32,10 @@ public class GenreServiceImpl implements GenreService{
             return null;
         return y;
     }
+
+    @Override
+    public int addGenres(Genre genre){
+        genreRepository.save(genre);
+        return 0;
+    }
 }

@@ -4,6 +4,7 @@ import com.example.entity.Rack;
 import com.example.services.RackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +23,10 @@ public class RackController {
     @GetMapping("/racks")
     List<Rack> getAllRacks(){
         return rackService.findAll();
+    }
+
+    @PostMapping("/racks")
+    int addRacks(){
+        return rackService.addRacks();
     }
 }

@@ -9,4 +9,6 @@ import java.util.List;
 public interface RackService {
     public List<Rack> findAll();
     public Rack find(int rackId);
+
+    public int addRacks();
 }

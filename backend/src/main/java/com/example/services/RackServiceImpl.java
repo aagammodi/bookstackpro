@@ -33,4 +33,12 @@ public class RackServiceImpl implements RackService{
             return null;
         return y;
     }
+
+    @Override
+    public int addRacks(){
+        Rack rack = new Rack();
+        rack.setTotalBooks(0);
+        rackRepository.save(rack);
+        return 0;
+    }
 }
