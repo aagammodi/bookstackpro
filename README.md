@@ -1,0 +1,1 @@
+BookStackPro is an platform where library admin can update details about books, racks, variours genres. At the same time users of the website may search their favourite books and know exact location of where it is in the library.
