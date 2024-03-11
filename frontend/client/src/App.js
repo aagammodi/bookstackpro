@@ -13,7 +13,7 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/Racks" element={<Racks />} />
         <Route path="/books" element={<Books />} />
-        <Route path="/category-detail" element={<Categorydetail />} />
+        <Route path="/categories/:genreId" element={<Categorydetail />} />
       </Routes>
     </BrowserRouter>
   );
