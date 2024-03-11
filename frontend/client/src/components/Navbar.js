@@ -1,8 +1,14 @@
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "./assets/logo.png";
 function NavBar() {
+  const [selectedItem, setSelectedItem] = useState('dashboard');
+
+  const handleSelect = (selectedKey) => {
+    setSelectedItem(selectedKey);
+  };
   return (
     <div>
       <Navbar expand="lg" data-bs-theme="light" className="bg-light">
@@ -18,17 +24,17 @@ function NavBar() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link className="main-nav mx-1" href="/">
+            <Nav className="me-auto" activeKey={selectedItem} onSelect={handleSelect}>
+              <Nav.Link className="main-nav mx-1" href="/" eventKey="dashboard">
                 Dashboard
               </Nav.Link>
-              <Nav.Link className="main-nav mx-1" href="/categories">
+              <Nav.Link className="main-nav mx-1" href="/categories" eventKey="categories">
                 Categories
               </Nav.Link>
-              <Nav.Link className="main-nav mx-1" href="/books">
+              <Nav.Link className="main-nav mx-1" href="/books" eventKey="books">
                 All Books
               </Nav.Link>
-              <Nav.Link className="main-nav mx-1" href="/racks">
+              <Nav.Link className="main-nav mx-1" href="/racks" eventKey="racks">
                 All Racks
               </Nav.Link>
             </Nav>

@@ -45,7 +45,7 @@ const RackDetail = () => {
                     </h6>
                     <p class="card-text">{book.description}</p>
                     <p class="card-text">
-                      Rack No: <span>{book.rack.rackId}</span>
+                      Genre: <span>{book.genre.genreName}</span>
                     </p>
                     <p class="card-text">
                       Copies: <span>{book.copiesCount}</span>

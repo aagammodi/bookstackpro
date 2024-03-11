@@ -3,10 +3,8 @@ package com.example.restcontroller;
 import com.example.entity.Book;
 import com.example.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -28,5 +26,15 @@ public class BookController {
     @GetMapping("/racks/{rackId}")
     List<Book> getRackBooks(@PathVariable int rackId){
         return bookService.getRackBooks(rackId);
+    }
+
+    @GetMapping("/genres/{genreId}")
+    List<Book> getGenreBooks(@PathVariable int genreId){
+        return bookService.getGenreBooks(genreId);
+    }
+
+    @PostMapping("/books")
+    int addBooks(@RequestBody Book book, @RequestParam int genreId, @RequestParam int rackId){
+        return bookService.addBooks(book, genreId, rackId);
     }
 }
