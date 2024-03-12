@@ -5,12 +5,15 @@ import { useNavigate } from "react-router-dom";
 
 const Categories = () => {
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
   const [categoryData, setCategoryData] = useState([]);
+  const [totalData, setTotalData] = useState([]);
   const [dataloaded, setDataLoaded] = useState(false);
   const fetchData = async () => {
     try {
       let response = await axios.get("http://localhost:8080/api/genres");
       setCategoryData(response.data);
+      setTotalData(response.data);
       setDataLoaded(true);
     } catch (error) {
       console.log("Error while fetching genre data: ", error);
@@ -20,6 +23,14 @@ const Categories = () => {
     fetchData();
   }, []);
 
+  const searchChanged = (event) => {
+    setSearch(event.target.value);
+  };
+
+  useEffect(()=>{
+    setCategoryData(totalData.filter((category) => category.genreName.toLowerCase().includes(search)));
+  }, [search]);
+
   const handleSeeBooks = (genreId) => {
     navigate(`/categories/${genreId}`);
   };
@@ -28,6 +39,11 @@ const Categories = () => {
     <div>
       <NavBar />
       <div className="container">
+      <div className="row">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" onChange={searchChanged}/>
+    </div>
+      </div>
         <div className="row">
           {dataloaded &&
             categoryData.map((genre, index) => (

@@ -5,11 +5,14 @@ import NavBar from "./Navbar";
 const Books = () => {
   const [bookData, setBookData] = useState([]);
   const [dataloaded, setDataLoaded] = useState(false);
+  const [search, setSearch] = useState("");
+  const [totalData, setTotalData] = useState([]);
 
   const fetchData = async () => {
     try {
       let response = await axios.get("http://localhost:8080/api/books");
       setBookData(response.data);
+      setTotalData(response.data);
       setDataLoaded(true);
     } catch (error) {
       console.log(error);
@@ -19,10 +22,23 @@ const Books = () => {
     fetchData();
   }, []);
 
+  const searchChanged = (event) => {
+    setSearch(event.target.value);
+  };
+
+  useEffect(()=>{
+    setBookData(totalData.filter((category) => (category.bookName.toLowerCase().includes(search) || category.author.toLowerCase().includes(search))));
+  }, [search]);
+
   return (
     <div>
       <NavBar />
       <div className="container">
+      <div className="row">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search..." aria-label="Search" aria-describedby="basic-addon2" onChange={searchChanged}/>
+    </div>
+      </div>
         <div className="row">
           {dataloaded &&
             bookData.map((book, index) => (
